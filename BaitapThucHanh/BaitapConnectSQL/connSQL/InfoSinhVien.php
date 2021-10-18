@@ -28,19 +28,14 @@
                 <td><input type="text" name="diachi"></td>
             </tr>
             <tr> 
-                <td>Khóa: </td>
-                <td><select name="khoa" id="">
-                    <option value="57">57</option>
-                    <option value="58">58</option>
-                    <option value="59">59</option>
-                    <option value="60">60</option>
+                <td>Khoa: <select name="khoa" id="">
+                    <option value="CNTT">CNTT</option>
                 </select></td>
-                <td>Lớp: </td>
-                <td><select name="lop" id="">
-                    <option value="CNTT1">CNTT1</option>
-                    <option value="CNTT2">CNTT2</option>
-                    <option value="CNTT3">CNTT3</option>
-                    <option value="CNTT4">CNTT4</option>
+                <td>Lớp: <select name="lop" id="">
+                    <option value="1">CNTT1</option>
+                    <option value="2">CNTT2</option>
+                    <option value="3">CNTT3</option>
+                    <option value="4">CNTT4</option>
                 </select></td>
             </tr>
             <tr>
@@ -81,12 +76,12 @@
             if(isset($_POST['khoa'])) {$khoa=$_POST['khoa'];}
             if(isset($_POST['lop'])) {$lop=$_POST['lop'];}
             //2. Xây dựng câu truy vấn
-            $sql = "INSERT INTO `sv`(`ten`, `ho`, `dia_chi`, `lop`, `khoa`) VALUES ('$ten','$ho','$diachi','$lop','$khoa')";
+            $sql = "INSERT INTO `sv`(`ten`, `ho`, `dia_chi`, `id_lop`, `khoa`) VALUES ('$ten','$ho','$diachi','$lop','$khoa')";
             //check
             if($conn -> query("$sql") == TRUE){
-                echo "thêm dữ liệu thành công";
+                echo "<script>alert('Thêm dữ liệu thành công')</script>";
             }else{
-                echo "ERROR" . $conn->error;
+                echo "<script>alert('Error')</script>";
             }
         }
         
