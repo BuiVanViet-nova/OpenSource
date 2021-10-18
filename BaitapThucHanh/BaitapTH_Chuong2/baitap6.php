@@ -9,7 +9,7 @@
 </head>
 <body>
 <?php
-function swap_our(&$a, &$b){
+function our_swap(&$a, &$b){
     $tmp = $a;
     $a = $b;
     $b = $tmp;
@@ -17,17 +17,17 @@ function swap_our(&$a, &$b){
 function incre_sort($arr, $incre_value = true){
     for($i=0;$i<count($arr)-1;$i++){
         for($j=$i+1;$j<count($arr);$j++){
-            if($arr[$i] > $arr[$j]){
-                swap_our($arr[$i],$arr[$j]);
-            }
+            if($incre_value){
+                if($arr[$i] > $arr[$j]) our_swap($arr[$i],$arr[$j]);      
+            }else if($arr[$i] < $arr[$j]) our_swap($arr[$i],$arr[$j]);
         }
     }
-    return ($incre_value) ? $arr:array_reverse($arr);
+    return $arr;
 }
 if (isset($_POST['submit'])){
     $text=$_POST['text'];
     $original=explode(",",$text);
-    $result_decre = implode(",", incre_sort($original, incre_value:true));
+    $result_decre = implode(",", incre_sort($original, incre_value:false));
     $result_incre = implode(",", incre_sort($original));
 }
 
