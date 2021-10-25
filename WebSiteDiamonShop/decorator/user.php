@@ -61,32 +61,16 @@ Lower Header Section
         <?php include("../common/header.php") ?>
 
 		<?php include("../web/index.php") ?>
-
-		<?php include("../common/footer.php") ?>
 	</div>
 
 	<!-- /container -->
 
 	<div class="copyright">
-		<div class="container">
-			<p class="pull-right">
-				<a href="#"><img
-					src="../template/assets/user/img/maestro.png'"
-					alt="payment"></a> <a href="#"><img
-					src="../template/assets/user/img/mc.png'"
-					alt="payment"></a> <a href="#"><img
-					src="../template/assets/user/img/pp.png'"
-					alt="payment"></a> <a href="#"><img
-					src="../template/assets/user/img/visa.png'/>"
-					alt="payment"></a> <a href="#"><img
-					src="../template/assets/user/img/disc.png'/>"
-					alt="payment"></a>
-			</p>
-			<span>Copyright &copy; 2013<br> bootstrap ecommerce
-				shopping template
-			</span>
-		</div>
+	<?php include("../common/footer.php") ?>
 	</div>
+
+	
+
 	<a href="#" class="gotop"><i class="icon-double-angle-up"></i></a>
 	<!-- Placed at the end of the document so the pages load faster -->
 	<script src="../template/assets/user/js/jquery.js'/>"></script>
@@ -97,6 +81,8 @@ Lower Header Section
 	<script
 		src="../template/assets/user/js/jquery.scrollTo-1.4.3.1-min.js'/>"></script>
 	<script src="../template/assets/user/js/shop.js'/>"></script>
-	<dec:getProperty property="page.script"></dec:getProperty>
+	
+
+	
 </body>
 </html>

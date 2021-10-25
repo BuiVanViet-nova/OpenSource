@@ -46,7 +46,7 @@
                     <li ><a href="#">Bài tập</a></li>
                     <li ><a href="#">Thông tin cá nhân</a></li>
                     <li ><a href="#">Liên hệ</a></li>
-                    <li ><a href="#">Khác</a></li>
+                    <li ><a href="#">Thêm sản phẩm</a></li>
 				</ul>
 				<form action="#" class="navbar-search pull-left">
 					<input type="text" placeholder="Search" class="search-query span2">
