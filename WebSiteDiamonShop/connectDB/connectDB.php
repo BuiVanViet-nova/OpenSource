@@ -15,8 +15,6 @@
         //check connect
         if($conn -> connect_error){
             die("connect is failed: " .$conn->connect_error);
-        }else{
-            echo "succ";
         }
     }
     // connect_db();

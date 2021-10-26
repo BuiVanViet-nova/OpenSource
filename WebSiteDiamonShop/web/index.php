@@ -1,5 +1,13 @@
+<?php
+	require("../connectDB/connectDB.php");
+
+	$products = getAllProducts();
+	disconnect_db();
+?>
+
 <title>Trang chủ</title>
-<body>
+<body>	
+
 	<!-- 
 Body Section 
 -->
@@ -107,40 +115,8 @@ Body Section
 			</div>
 		</div>
 		<!--
-New Products
--->
-		<div class="well well-small">
-			<h3>Sản phẩm mới</h3>
-			<hr class="soften" />
-			<div class="row-fluid">
-				<div id="newProductCar" class="carousel slide">
-					<div class="carousel-inner">
-							<div class="item active">
-                                <li class="span3">
-                                    <div class="thumbnail">
-                                        <a class="zoomTool" href="product_details.html"
-                                            title="add to cart"><span class="icon-search"></span>
-                                            QUICK VIEW</a> <a href="product_details.html"><img
-                                            src="../template/assets/user/img/d.jpg"
-                                            alt=""></a>
-                                    </div>
-                                </li>
-							</div>
-                            <div class="item">
-                                <ul class="thumbnails">
-							
-
-					</div>
-					<a class="left carousel-control" href="#newProductCar"
-						data-slide="prev">&lsaquo;</a> <a class="right carousel-control"
-						href="#newProductCar" data-slide="next">&rsaquo;</a>
-				</div>
-			</div>
-
-		</div>
-		<!--
-	Featured Products
-	-->
+		Featured Products
+		-->
 		<div class="well well-small">
 			<h3>
 				<a class="btn btn-mini pull-right" href="products.html"
@@ -149,9 +125,11 @@ New Products
 			</h3>
 			<hr class="soften" />
 			<div class="row-fluid">
-
+					<?php if(count($products)>0){ ?>
 					<ul class="thumbnails">
-							<li class="span4">
+						<?php foreach($products as $item){ 
+							echo "<li class='span4' style='margin-left:6px' >";?>
+							<!-- <li class="span4"> -->
 								<div class="thumbnail">
 									<a class="zoomTool" href="product_details.html"
 										title="add to cart"><span class="icon-search"></span>
@@ -172,9 +150,9 @@ New Products
 									</div>
 								</div>
 							</li>
-							<!-- index chạy từ 0 đến hết nên phải cộng index lên 1 -->
-							
+						<?php } ?>
 					</ul>
+					<?php } ?>
 			</div>
 		</div>
 		<hr>
