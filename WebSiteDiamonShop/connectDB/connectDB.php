@@ -27,6 +27,50 @@
         }
     }
 
+    
+    function getAllSlide(){
+        global $conn;
+        //hàm kết nối
+        connect_db();
+
+        //query
+        $query = "SELECT * FROM `slides`";
+
+        //result: lưu danh sách sản phẩm trả về
+        $result = $conn -> query($query);
+        $slides = [];
+        if($result){
+            //lặp từng kết quả sql trả về
+            while($row = $result->fetch_assoc()){
+                //đưa dữ liệu sản phẩm vào mảng products
+                $slides[] = $row;
+            }
+        }
+        return $slides;
+    }
+
+    //lấy tất cả categorys
+    function getAllCategorys(){
+        global $conn;
+        //hàm kết nối
+        connect_db();
+
+        //query
+        $query = "SELECT * FROM `categorys`";
+
+        //result: lưu danh sách sản phẩm trả về
+        $result = $conn -> query($query);
+        $categorys = [];
+        if($result){
+            //lặp từng kết quả sql trả về
+            while($row = $result->fetch_assoc()){
+                //đưa dữ liệu sản phẩm vào mảng products
+                $categorys[] = $row;
+            }
+        }
+        return $categorys;
+    }
+
     //lấy tất cả sản phẩm
     function getAllProducts(){
         global $conn;
