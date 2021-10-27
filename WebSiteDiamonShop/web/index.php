@@ -128,7 +128,7 @@ Body Section
 								<!-- <li class="span4"> -->
 								<div class="thumbnail">
 									<a class="zoomTool" href="product_details.html" title="add to cart"><span class="icon-search"></span>
-										QUICK VIEW</a> <a onclick="window.location.href='../web/product/detail.php'"><img id="img" src="../template/assets/user/img/<?php echo $item['img'] ?>" alt=""></a>
+										QUICK VIEW</a> <a onclick="window.location.href='../web/product/detail.php?id=<?php echo $item['id']; ?>'"><img id="img" src="../template/assets/user/img/<?php echo $item['img'] ?>" alt=""></a>
 									<div class="caption">
 										<h5><?php echo $item['name'] ?></h5>
 										<h4>

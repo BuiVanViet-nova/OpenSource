@@ -134,7 +134,7 @@ Body Section
 						<h3>${product.name}</h3>
 						<hr class="soft" />
 
-						<form class="form-horizontal qtyFrm" method="get" action="<c:url value='/AddCart/${product.id_product}'/>">
+						<form class="form-horizontal qtyFrm" method="get" action="">
 							<div class="control-group">
 								<label class="control-label">đ</span></label>
 								<div class="controls">
@@ -199,8 +199,6 @@ Body Section
 								<div class="span4 alignR">
 									<form class="form-horizontal qtyFrm">
 										<h3>
-											<fmt:formatNumber type="number" maxFractionDigits="3"
-												value="${product.price }" />
 											đ
 										</h3>
 
@@ -213,7 +211,6 @@ Body Section
 								</div>
 							</div>
 							<hr class="soft" />
-						</c:forEach>
 
 
 					</div>
