@@ -47,7 +47,7 @@ Lower Header Section
 		<div id="gototop"></div>
         <?php include("../common/header.php") ?>
 
-		<?php include("../web/index.php") ?>
+		<?php include("../web/content.php") ?>
 	</div>
 
 	<!-- /container -->
