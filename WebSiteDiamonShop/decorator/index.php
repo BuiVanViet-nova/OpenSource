@@ -12,34 +12,7 @@
 	<!-- 
 	Upper Header Section 
 -->
-	<div class="navbar navbar-inverse navbar-fixed-top">
-		<div class="topNav">
-			<div class="container">
-				<div class="alignR">
-					<div class="pull-left socialNw">
-						<a href="#"><span class="icon-twitter"></span></a> <a href="#"><span
-							class="icon-facebook"></span></a> <a href="#"><span
-							class="icon-youtube"></span></a> <a href="#"><span
-							class="icon-tumblr"></span></a>
-					</div>
-					<a class="active" href="index.html"> <span class="icon-home"></span>
-						Home
-					</a>
-					<a href="#"><span class="icon-user"></span>TÊN NGƯỜI DÙNG</a>
-					<a href="../dang-xuat'/>"><span class="icon-edit"></span>Đăng
-							xuất</a>
-					<a href="#"><span class="icon-edit"></span>Đăng
-							ký</a>
-					<a href="contact.html"><span class="icon-envelope"></span>
-						Contact us</a> <a href="../gio-hang'/>"><span
-						class="icon-shopping-cart"></span> (?)Sản phẩm - <span
-						class="badge badge-warning"><fmt:formatNumber type="number"
-								groupingUsed="true" value="" />đ</span></a>
-				</div>
-			</div>
-		</div>
-	</div>
-
+	
 	<!--
 Lower Header Section 
 -->
@@ -52,7 +25,7 @@ Lower Header Section
 
 	<!-- /container -->
 
-	<div class="copyright">
+	<div style="width:940px; height:auto" class="copyright">
 	<?php include("../common/footer.php") ?>
 	</div>
 

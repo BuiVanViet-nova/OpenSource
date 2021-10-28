@@ -1,10 +1,11 @@
 <?php
-require("../connectDB/connectDB.php");
+	require("../connectDB/connectDB.php");
 
-$products = getAllProducts();
-$slides = getAllSlide();
-$categorys = getAllCategorys();
-disconnect_db();
+	$products = getAllProducts();
+	$slides = getAllSlide();
+	$categorys = getAllCategorys();
+	disconnect_db();
+
 ?>
 
 <title>Trang chủ</title>
@@ -127,8 +128,8 @@ Body Section
 								echo "<li class='span4' style='margin-left:6px;width:217px; height:377px' >"; ?>
 								<!-- <li class="span4"> -->
 								<div class="thumbnail">
-									<a class="zoomTool" href="product_details.html" title="add to cart"><span class="icon-search"></span>
-										QUICK VIEW</a> <a onclick="window.location.href='../web/product/detail.php?id=<?php echo $item['id']; ?>'"><img id="img" src="../template/assets/user/img/<?php echo $item['img'] ?>" alt=""></a>
+									<a class="zoomTool" style="cursor:pointer" onclick="window.location.href='../web/detail.php?id=<?php echo $item['id']; ?>'"><span class="icon-search"></span>
+										QUICK VIEW</a> <a style="cursor:pointer" onclick="window.location.href='../web/detail.php?id=<?php echo $item['id']; ?>'"><img id="img" src="../template/assets/user/img/<?php echo $item['img'] ?>" alt=""></a>
 									<div class="caption">
 										<h5><?php echo $item['name'] ?></h5>
 										<h4>
