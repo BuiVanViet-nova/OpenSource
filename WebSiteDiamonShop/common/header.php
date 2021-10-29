@@ -70,7 +70,7 @@
 			</a>
 			<div class="nav-collapse">
 				<ul class="nav">
-					<li class="active"><a href="#">Trang chủ</a></li>
+					<li class="active"><a href="../decorator/index.php">Trang chủ</a></li>
                     <li ><a href="#">Bài tập</a></li>
                     <li ><a href="#">Thông tin cá nhân</a></li>
                     <li ><a href="#">Liên hệ</a></li>

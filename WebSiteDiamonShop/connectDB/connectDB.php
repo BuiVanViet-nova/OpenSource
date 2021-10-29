@@ -115,6 +115,26 @@
         return $product;
     }
 
+    function getProductByIDCategory($id){
+        global $conn;
+
+        //hàm kết nối
+        connect_db();
+        $sql = "SELECT * FROM `products` WHERE id_category = $id";
+        $result = $conn -> query($sql);
+
+        $productByIDCategory = [];
+        if($result){
+            while($row = $result->fetch_assoc()){
+                $productByIDCategory[] = $row;
+            }
+        }
+
+        return $productByIDCategory;
+    }
+
+    
+
     function addProduct(){
         
     }
