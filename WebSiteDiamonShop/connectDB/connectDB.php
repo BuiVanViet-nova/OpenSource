@@ -78,7 +78,7 @@
         connect_db();
 
         //query
-        $query = "SELECT * FROM `products`";
+        $query = "SELECT * FROM `products` ORDER BY RAND()";
 
         //result: lưu danh sách sản phẩm trả về
         $result = $conn -> query($query);
@@ -115,6 +115,7 @@
         return $product;
     }
 
+    //lấy sản phẩm có id_category = id_product
     function getProductByIDCategory($id){
         global $conn;
 
@@ -132,6 +133,26 @@
 
         return $productByIDCategory;
     }
+
+    //lấy sản phẩm có id_category = id_product limit 3
+    function getProductsConnect($id){
+        global $conn;
+
+        //hàm kết nối
+        connect_db();
+        $sql = "SELECT * FROM `products` WHERE id_category = $id ORDER BY RAND() LIMIT 3" ;
+        $result = $conn -> query($sql);
+
+        $productByIDCategory = [];
+        if($result){
+            while($row = $result->fetch_assoc()){
+                $productByIDCategory[] = $row;
+            }
+        }
+
+        return $productByIDCategory;
+    }
+
 
     
 

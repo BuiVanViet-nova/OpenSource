@@ -36,15 +36,15 @@
                             <?php foreach ($listProduct as $item) {
                                 echo "<li class='span4' style='margin-left:20px;width:217px; height:377px' >"; ?>
                                 <div class="thumbnail">
-                                    <a class="zoomTool" onclick="window.location.href='../web/detail.php?id=<?php echo $item['id']; ?>'" title="add to cart"><span class="icon-search"></span> QUICK
-                                        VIEW</a> <a href="#"><img id="img" src="../template/assets/user/img/<?php echo $item['img'] ?>" alt=""></a>
+                                    <a class="zoomTool" style="cursor:pointer" onclick="window.location.href='../web/detail.php?id=<?php echo $item['id']; ?>'" title="add to cart"><span class="icon-search"></span> QUICK
+                                        VIEW</a> <a href="#"><img onclick="window.location.href='../web/detail.php?id=<?php echo $item['id']; ?>'" id="img" src="../template/assets/user/img/<?php echo $item['img'] ?>" alt=""></a>
                                     <div class="caption">
                                         <h5><?php echo $item['name'] ?></h5>
                                         <h4>
-                                            <a class="defaultBtn" onclick="window.location.href='../web/detail.php?id=<?php echo $item['id']; ?>'" title="Click to view"><span class="icon-zoom-in"></span></a>
-                                            <a class="shopBtn" href="#" title="add to cart"><span class="icon-plus"></span></a> <span class="pull-right"> đ
-                                            </span>
-                                        </h4>
+											<a class="defaultBtn" href="product_details.html" title="Click to view"><span class="icon-zoom-in"></span></a>
+											<a class="shopBtn" href="#" title="add to cart"><span class="icon-plus" style="margin-top: 100px;"></span></a> <span class="pull-right">đ
+											</span>
+										</h4>
                                     </div>
                                 </div>
                                 </li>

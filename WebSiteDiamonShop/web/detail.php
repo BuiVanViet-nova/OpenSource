@@ -14,6 +14,10 @@
 		$categorys = getAllCategorys();
 		$product_id = isset( $_GET['id']) ? $_GET['id'] : "0";	//id là id của url
 		$product = getProduct($product_id);
+		foreach($product as $index => $item){
+			if($index == "id_category")
+				$productConn = getProductsConnect($item);
+		}
 		disconnect_db();
 	?>
 	<div class="container">
@@ -89,14 +93,14 @@ Body Section
 						<div class="tab-pane fade active in" id="home">
 							<?php echo $product['details'] ?></div>
 						<div class="tab-pane fade" id="profile">
-							
+							<?php foreach($productConn as $item){ ?>
 							<div class="row-fluid">
 								<div class="span2">
-									<img src="../template/assets/user/img/${item.img }" alt="">
+									<img src="../template/assets/user/img/<?php echo $item['img'] ?>" alt="">
 								</div>
 								<div class="span6">
-									<h5>${item.name }</h5>
-									<p>${item.title }</p>
+									<h5><?php echo $item['name'] ?></h5>
+									<p><?php echo $item['title'] ?></p>
 								</div>
 								<div class="span4 alignR">
 									<form class="form-horizontal qtyFrm">
@@ -105,13 +109,14 @@ Body Section
 										</h3>
 
 										<div class="btn-group">
-											<a href="product_details.html" class="defaultBtn"><span class=" icon-shopping-cart"></span> Add to cart</a> <a href="product_details.html" class="shopBtn">VIEW</a>
+											<a href="product_details.html" class="defaultBtn"><span class=" icon-shopping-cart"></span> Add to cart</a> 
+											<a style="cursor:pointer" onclick="window.location.href='detail.php?id=<?php echo $item['id']; ?>" class="shopBtn">VIEW</a>
 										</div>
 									</form>
 								</div>
 							</div>
 							<hr class="soft" />
-
+							<?php } ?>
 
 						</div>
 
