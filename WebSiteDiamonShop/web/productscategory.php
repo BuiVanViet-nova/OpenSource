@@ -6,6 +6,9 @@
             height: 250px;
         }
     </style>
+    <!-- Favicons -->
+    <link rel="shortcut icon"
+	href="../template/assets/user/ico/favicon.ico">
 </head>
 
 <body>

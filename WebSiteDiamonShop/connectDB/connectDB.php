@@ -71,6 +71,27 @@
         return $categorys;
     }
 
+    //lấy thông tin bản thân
+    function getInfo(){
+        global $conn;
+
+        //hàm kết nối
+        connect_db();
+
+        $query = "SELECT * FROM `infomation`";
+
+        //thực hiện câu truy vấn
+        $result = $conn -> query($query);
+
+        $info = [];
+        if($result){
+            $row = $result->fetch_assoc();
+            $info = $row;
+        }
+
+        return $info;
+    }
+
     //lấy tất cả sản phẩm
     function getAllProducts(){
         global $conn;

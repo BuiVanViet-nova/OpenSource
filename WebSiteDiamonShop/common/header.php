@@ -31,7 +31,7 @@
 	<div class="row">
 		<div class="span4">
 			<h1>
-				<a class="logo" href="index.html"><span>Twitter Bootstrap
+				<a class="logo" href="../decorator/index.php"><span>Twitter Bootstrap
 						ecommerce template</span> <img
 					src="../template/assets/user/img/logo-bootstrap-shoping-cart.png"
 					alt="bootstrap sexy shop"> </a>

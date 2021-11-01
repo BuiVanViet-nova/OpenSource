@@ -1,4 +1,7 @@
 <title>Trang chủ</title>
+<!-- Favicons -->
+<link rel="shortcut icon"
+	href="../template/assets/user/ico/favicon.ico">
 <style>
     #img {
         width: 207px;

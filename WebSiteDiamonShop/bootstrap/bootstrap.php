@@ -10,10 +10,6 @@
 	href="../template/assets/user/font-awesome/css/font-awesome.css"
 	rel="stylesheet">
 
-<!-- Favicons -->
-<link rel="shortcut icon"
-	href="../template/assets/user/ico/favicon.ico">
-
 <script src="../template/assets/user/js/jquery.js'/>"></script>
 	<script
 		src="../template/assets/user/js/bootstrap.min.js'/>"></script>
