@@ -1,3 +1,4 @@
+
 <div class="navbar navbar-inverse navbar-fixed-top">
 		<div class="topNav">
 			<div class="container">
@@ -57,30 +58,3 @@
 		</div>
 	</div>
 </header>
-
-<!--
-		Navigation Bar Section 
-		-->
-<div class="navbar">
-	<div class="navbar-inner">
-		<div class="container">
-			<a data-target=".nav-collapse" data-toggle="collapse"
-				class="btn btn-navbar"> <span class="icon-bar"></span> <span
-				class="icon-bar"></span> <span class="icon-bar"></span>
-			</a>
-			<div class="nav-collapse">
-				<ul class="nav">
-					<li class="active"><a href="../decorator/index.php">Trang chủ</a></li>
-                    <li ><a href="#">Bài tập</a></li>
-                    <li ><a href="#">Thông tin cá nhân</a></li>
-                    <li ><a href="#">Liên hệ</a></li>
-                    <li ><a href="#">Thêm sản phẩm</a></li>
-				</ul>
-				<form action="#" class="navbar-search pull-left">
-					<input type="text" placeholder="Search" class="search-query span2">
-				</form>
-				
-			</div>
-		</div>
-	</div>
-</div>

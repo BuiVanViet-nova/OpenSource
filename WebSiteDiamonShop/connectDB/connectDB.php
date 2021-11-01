@@ -121,8 +121,8 @@
 
         //hàm kết nối
         connect_db();
-        $sql = "SELECT * FROM `products` WHERE id_category = $id";
-        $result = $conn -> query($sql);
+        $query = "SELECT * FROM `products` WHERE id_category = $id";
+        $result = $conn -> query($query);
 
         $productByIDCategory = [];
         if($result){
@@ -140,8 +140,8 @@
 
         //hàm kết nối
         connect_db();
-        $sql = "SELECT * FROM `products` WHERE id_category = $id ORDER BY RAND() LIMIT 3" ;
-        $result = $conn -> query($sql);
+        $query = "SELECT * FROM `products` WHERE id_category = $id ORDER BY RAND() LIMIT 3" ;
+        $result = $conn -> query($query);
 
         $productByIDCategory = [];
         if($result){
@@ -153,8 +153,31 @@
         return $productByIDCategory;
     }
 
+    //tìm kiếm
+    function Search($search){
+        global $conn;
 
-    
+        //hàm kết nối
+        connect_db();
+        // if(isset($_GET['search'])){
+        //     $search = $_GET['search'];
+        // }else{
+        //     $search = '';
+        // }
+        $query = "SELECT * FROM `products` WHERE name LIKE '%" .$search. "%'";
+        $result = $conn -> query($query);
+
+        $products = [];
+        if($result){
+            //lặp từng kết quả sql trả về
+            while($row = $result->fetch_assoc()){
+                //đưa dữ liệu sản phẩm vào mảng products
+                $products[] = $row;
+            }
+        }
+        return $products;
+        
+    }
 
     function addProduct(){
         

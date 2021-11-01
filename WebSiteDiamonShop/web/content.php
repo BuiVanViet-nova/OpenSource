@@ -1,6 +1,6 @@
 <?php
 	require("../connectDB/connectDB.php");
-
+	
 	$products = getAllProducts();
 	$slides = getAllSlide();
 	$categorys = getAllCategorys();

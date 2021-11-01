@@ -18,8 +18,8 @@
     ?>
     <div class="container">
         <div id="gototop"></div>
-        <?php include("../common/header.php");
-        ?>
+        <?php include("../common/header.php");?>
+        <?php include("../common/navigation.php"); ?>
         <div class="row">
             <?php include("../common/categorys.php"); ?>
             <div class="row">

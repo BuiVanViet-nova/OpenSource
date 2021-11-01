@@ -10,29 +10,29 @@
 
 <body>
 	<?php include("../bootstrap/bootstrap.php");
-		include("../connectDB/connectDB.php");
-		$categorys = getAllCategorys();
-		$product_id = isset( $_GET['id']) ? $_GET['id'] : "0";	//id là id của url
-		$product = getProduct($product_id);
-		foreach($product as $index => $item){
-			if($index == "id_category")
-				$productConn = getProductsConnect($item);
-		}
-		disconnect_db();
+	include("../connectDB/connectDB.php");
+	$categorys = getAllCategorys();
+	$product_id = isset($_GET['id']) ? $_GET['id'] : "0";	//id là id của url
+	$product = getProduct($product_id);
+	foreach ($product as $index => $item) {
+		if ($index == "id_category")
+			$productConn = getProductsConnect($item);
+	}
+	disconnect_db();
 	?>
 	<div class="container">
 		<div id="gototop"></div>
 		<?php include("../common/header.php"); ?>
+		<?php include("../common/navigation.php"); ?>
 		<!-- 
 Body Section 
 -->
 
 		<div class="row product-content">
-		<?php include("../common/categorys.php"); ?>
+			<?php include("../common/categorys.php"); ?>
 			<div class="span9">
 				<ul class="breadcrumb">
-					<li><a href="index.html">Trang chủ</a> <span class="divider">/</span></li>
-					<li><a href="products.html">Sản phẩm</a> <span class="divider">/</span></li>
+					<li><a href="../decorator/index.php">Trang chủ</a> <span class="divider">/</span></li>
 					<li class="active">Chi tiết sản phẩm</li>
 				</ul>
 				<div class="well well-small">
@@ -72,6 +72,13 @@ Body Section
 										</select>
 									</div>
 								</div>
+
+								<div class="control-group">
+									<label class="control-label"><span>Giá</span></label>
+									<div class="controls">
+										<input type="text" value="<?php echo $product['price'] ?>" readonly>
+									</div>
+								</div>
 								<h4><?php echo $product['title'] ?></h4>
 								<button type="submit" class="shopBtn">
 									<span class=" icon-shopping-cart"></span> Thêm giỏ hàng
@@ -93,29 +100,29 @@ Body Section
 						<div class="tab-pane fade active in" id="home">
 							<?php echo $product['details'] ?></div>
 						<div class="tab-pane fade" id="profile">
-							<?php foreach($productConn as $item){ ?>
-							<div class="row-fluid">
-								<div class="span2">
-									<img src="../template/assets/user/img/<?php echo $item['img'] ?>" alt="">
-								</div>
-								<div class="span6">
-									<h5><?php echo $item['name'] ?></h5>
-									<p><?php echo $item['title'] ?></p>
-								</div>
-								<div class="span4 alignR">
-									<form class="form-horizontal qtyFrm">
-										<h3>
-											đ
-										</h3>
+							<?php foreach ($productConn as $item) { ?>
+								<div class="row-fluid">
+									<div class="span2">
+										<img src="../template/assets/user/img/<?php echo $item['img'] ?>" alt="">
+									</div>
+									<div class="span6">
+										<h5><?php echo $item['name'] ?></h5>
+										<p><?php echo $item['title'] ?></p>
+									</div>
+									<div class="span4 alignR">
+										<form class="form-horizontal qtyFrm">
+											<h3>
+												đ
+											</h3>
 
-										<div class="btn-group">
-											<a href="product_details.html" class="defaultBtn"><span class=" icon-shopping-cart"></span> Add to cart</a> 
-											<a style="cursor:pointer" onclick="window.location.href='detail.php?id=<?php echo $item['id']; ?>" class="shopBtn">VIEW</a>
-										</div>
-									</form>
+											<div class="btn-group">
+												<a href="product_details.html" class="defaultBtn"><span class=" icon-shopping-cart"></span> Add to cart</a>
+												<a style="cursor:pointer" onclick="window.location.href='detail.php?id=<?php echo $item['id']; ?>" class="shopBtn">VIEW</a>
+											</div>
+										</form>
+									</div>
 								</div>
-							</div>
-							<hr class="soft" />
+								<hr class="soft" />
 							<?php } ?>
 
 						</div>
@@ -127,7 +134,7 @@ Body Section
 		</div>
 		<!-- Body wrapper -->
 		<div style="width:940px; height:auto" class="copyright">
-		<?php include("../common/footer.php") ?>
+			<?php include("../common/footer.php") ?>
 		</div>
 	</div>
 </body>

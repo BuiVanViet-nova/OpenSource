@@ -19,6 +19,7 @@ Lower Header Section
 	<div class="container">
 		<div id="gototop"></div>
         <?php include("../common/header.php") ?>
+		<?php include("../common/navigation.php"); ?>
 
 		<?php include("../web/content.php") ?>
 	</div>
