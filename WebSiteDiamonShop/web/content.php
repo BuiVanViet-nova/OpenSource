@@ -73,7 +73,7 @@ Body Section
 									<h5><?php echo $item['name'] ?></h5>
 									<h4>
 										<a class="defaultBtn" href="product_details.html" title="Click to view"><span class="icon-zoom-in"></span></a>
-										<a class="shopBtn" href="#" title="add to cart"><span class="icon-plus"></span></a> <span class="pull-right">đ
+										<a class="shopBtn" href="../connectDB/cartDB.php?id=<?php echo $item['id']; ?>" title="add to cart"><span class="icon-plus"></span></a> <span class="pull-right">đ
 										</span>
 									</h4>
 								</div>

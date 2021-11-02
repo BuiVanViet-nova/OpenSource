@@ -83,9 +83,9 @@ Body Section
 									</div>
 								</div>
 								<h4><?php echo $product['title'] ?></h4>
-								<button type="submit" class="shopBtn">
+								<a type="button" href="../connectDB/cartDB.php?id=<?php echo $product['id']; ?>" class="shopBtn">
 									<span class=" icon-shopping-cart"></span> Thêm giỏ hàng
-								</button>
+								</a>
 							</form>
 						</div>
 					</div>
@@ -120,7 +120,7 @@ Body Section
 
 											<div class="btn-group">
 												<a href="product_details.html" class="defaultBtn"><span class=" icon-shopping-cart"></span> Add to cart</a>
-												<a style="cursor:pointer" onclick="window.location.href='detail.php?id=<?php echo $item['id']; ?>" class="shopBtn">VIEW</a>
+												<a style="cursor:pointer" onclick="window.location.href='detail.php?id=<?php echo $product['id']; ?>'" class="shopBtn">VIEW</a>
 											</div>
 										</form>
 									</div>

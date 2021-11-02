@@ -17,7 +17,7 @@
 					<li class="active"><a href="../decorator/index.php">Trang chủ</a></li>
 					<li><a href="https://github.com/BuiVanViet-nova/OpenSource/tree/master/BaitapThucHanh" target="_blank">Bài tập</a></li>
 					<li><a href="../web/about_me.php">Thông tin cá nhân</a></li>
-					<li><a href="#">Giỏ hàng</a></li>
+					<li><a href="../web/cart.php">Giỏ hàng</a></li>
 					<li><a href="../web/contact.php">Liên hệ</a></li>
 					<li><a href="../web/compair.php">So sánh</a></li>
 				</ul>
