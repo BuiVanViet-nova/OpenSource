@@ -20,9 +20,26 @@
             'quanlity' => 1
 
         ];
-
-        $_SESSION['cart'][$id] = $item;
+        if(isset($_SESSION['cart'][$id])){
+            $_SESSION['cart'][$id]['quanlity'] +=1;
+        }else{
+            $_SESSION['cart'][$id] = $item;
+        }
+        
+        //Xóa sản phẩm khỏi giỏ hàng
+        $action = (isset($_GET['action'])) ? $_GET['action'] : 'add';
+        if($action == 'delete'){
+            unset($_SESSION['cart'][$id]);
+        }
+        var_dump($action);
         header('location: ../web/cart.php');
+        
     }
+    
+    //thêm mới giỏ hàng
+
+    //cập nhật giỏ hàng
+
+    
     
 ?>

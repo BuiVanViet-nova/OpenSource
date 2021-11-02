@@ -115,12 +115,12 @@ Body Section
 									<div class="span4 alignR">
 										<form class="form-horizontal qtyFrm">
 											<h3>
-												đ
+												<?php echo $item['price'] ?>đ
 											</h3>
 
 											<div class="btn-group">
-												<a href="product_details.html" class="defaultBtn"><span class=" icon-shopping-cart"></span> Add to cart</a>
-												<a style="cursor:pointer" onclick="window.location.href='detail.php?id=<?php echo $product['id']; ?>'" class="shopBtn">VIEW</a>
+												<a href="cart.php?id=<?php echo $item['id']; ?>" class="defaultBtn"><span class=" icon-shopping-cart"></span> Thêm giỏ hàng</a>
+												<a style="cursor:pointer" href="detail.php?id=<?php echo $item['id']; ?>" class="shopBtn">Chi tiết</a>
 											</div>
 										</form>
 									</div>

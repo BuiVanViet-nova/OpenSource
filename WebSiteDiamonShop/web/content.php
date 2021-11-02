@@ -55,9 +55,7 @@ Body Section
 		Featured Products
 		-->
 		<div class="well well-small">
-			<h3>
-				<a class="btn btn-mini pull-right" href="products.html" title="View more">VIew More<span class="icon-plus"></span></a> Sản
-				phẩm nổi bật
+			<h3>Sản phẩm nổi bật
 			</h3>
 			<hr class="soften" />
 			<div class="row-fluid">
@@ -73,7 +71,7 @@ Body Section
 									<h5><?php echo $item['name'] ?></h5>
 									<h4>
 										<a class="defaultBtn" href="product_details.html" title="Click to view"><span class="icon-zoom-in"></span></a>
-										<a class="shopBtn" href="../connectDB/cartDB.php?id=<?php echo $item['id']; ?>" title="add to cart"><span class="icon-plus"></span></a> <span class="pull-right">đ
+										<a class="shopBtn" href="../connectDB/cartDB.php?id=<?php echo $item['id']; ?>" title="add to cart"><span class="icon-plus"></span></a> <span class="pull-right"> <?php echo number_format($item['price']); ?>đ
 										</span>
 									</h4>
 								</div>

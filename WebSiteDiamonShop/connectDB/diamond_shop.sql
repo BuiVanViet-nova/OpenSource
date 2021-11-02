@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3308
--- Generation Time: Oct 30, 2021 at 03:24 AM
+-- Generation Time: Nov 02, 2021 at 04:32 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.10
 
@@ -42,6 +42,30 @@ INSERT INTO `categorys` (`id`, `name`, `description`) VALUES
 (2, 'Vòng tay', NULL),
 (3, 'Nhẫn', NULL),
 (4, 'Dây chuyền', NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `infomation`
+--
+
+CREATE TABLE `infomation` (
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `hobby` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `age` int(11) NOT NULL,
+  `phone` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `address` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `khoa` int(11) NOT NULL,
+  `lop` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `content` text COLLATE utf8mb4_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `infomation`
+--
+
+INSERT INTO `infomation` (`name`, `hobby`, `age`, `phone`, `address`, `khoa`, `lop`, `content`) VALUES
+('Bùi Văn Việt (bí danh: không có)', 'Chơi bóng đá, nấu ăn, thể dục thể thao, ca hát, du lịch và khám phá', 21, '0382956496', 'Thị xã Ninh Đa, huyện Ninh Hòa, tỉnh Khánh Hòa', 60, 'CNTT-2', 'Là con người với thái độ nhiệt tình, năng động, luôn cố gắng hết sức mình trong công việc, học hỏi nhanh, làm việc có tổ chức, có tính toán. <br> - Điểm mạnh lớn nhất của tôi là quan tâm tới từng chi tiết. Tính năng này đã giúp tôi rất nhiều trong lĩnh vực này. <br> Tôi luôn là  1 trưởng nhóm tuyệt vời. Tôi khá giỏi trong việc duy trì công việc trong nhóm để đạt kết quả tốt nhất. <br> - Về điểm yếu: Điểm yếu của tôi là vẫn chưa có 1 định hướng chính xác cho tương lai bởi tôi là người muốn hoàn thành càng nhiều càng tốt. Tôi nhân ra điều này làm tổn hại đến chất lượng và tôi đang tìm kiếm sự cân bằng giữa chất lượng và số lượng.');
 
 -- --------------------------------------------------------
 

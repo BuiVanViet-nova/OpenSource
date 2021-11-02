@@ -9,19 +9,18 @@
 							class="icon-youtube"></span></a> <a href="#"><span
 							class="icon-tumblr"></span></a>
 					</div>
-					<a class="active" href="index.html"> <span class="icon-home"></span>
+					<a class="active" href="../decorator/index.php"> <span class="icon-home"></span>
 						Home
 					</a>
 					<a href="#"><span class="icon-user"></span>TÊN NGƯỜI DÙNG</a>
-					<a href="../dang-xuat'/>"><span class="icon-edit"></span>Đăng
+					<a href="#"><span class="icon-edit"></span>Đăng
 							xuất</a>
 					<a href="#"><span class="icon-edit"></span>Đăng
 							ký</a>
-					<a href="contact.html"><span class="icon-envelope"></span>
-						Contact us</a> <a href="../gio-hang'/>"><span
-						class="icon-shopping-cart"></span> (?)Sản phẩm - <span
-						class="badge badge-warning"><fmt:formatNumber type="number"
-								groupingUsed="true" value="" />đ</span></a>
+					<a href="../web/contact.php"><span class="icon-envelope"></span>
+						Liên hệ</a> <a href="../web/cart.php"><span
+						class="icon-shopping-cart"></span> Giỏ hàng <span
+						class="badge badge-warning"></span></a>
 				</div>
 			</div>
 		</div>
@@ -51,9 +50,9 @@
 				<br>
 			</p>
 
-			<span class="btn btn-mini">(total product)<span
+			<span class="btn btn-mini"><span
 				class="icon-shopping-cart"></span></span> <span
-				class="btn btn-warning btn-mini">$</span> <span class="btn btn-mini">&pound;</span>
+				class="btn btn-mini">$</span> <span class="btn btn-mini">&pound;</span>
 			<span class="btn btn-mini">&euro;</span>
 		</div>
 	</div>

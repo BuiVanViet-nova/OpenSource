@@ -21,8 +21,9 @@
                 </ul>
                 <div class="well well-small">
                     <h1>
-                        Giỏ hàng <small class="pull-right"> ${totalQuantyCart} sản
-                            phẩm trong giỏ hàng</small>
+                        Giỏ hàng <small class="pull-right"> <?php $count=0; foreach($cart as $item){
+                            $count = $count+$item['quanlity'];
+                        } echo $count; ?> sản phẩm trong giỏ hàng</small>
                     </h1>
                     <hr class="soften" />
 
@@ -39,28 +40,35 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <?php foreach($cart as $key => $item){ ?>
+                            <?php $totalPrice = 0; ?>
+                            <?php foreach($cart as $key => $item){ 
+                                $totalPrice += ($item['price']*$item['quanlity']);
+                            ?>
+                                
                                 <tr>
                                     <td><img width="100" src="../template/assets/user/img/<?php echo $item['image'] ?>" alt=""></td>
                                     <td><?php echo $item['title'];  ?></td>
                                     <td>
                                         <?php echo $item['price']; ?>đ
                                     </td>
-                                    <td><input type="number" min="0" max="1000" class="span1" style="max-width: 50px" placeholder="1" name="number" size="16" value=""></td>
-                                    <td><a href="#" data-id="<?php echo $key ?>" class="btn btn-mini btn-danger edit-cart" type="button"> <span class="icon-edit"></span>
+                                    <td><input type="number" min="0" max="1000" class="span1" style="max-width: 50px" placeholder="1" name="number" size="16" value="<?php echo $item['quanlity']; ?>"></td>
+                                    <td><a href="#" data-id="<?php echo $key ?>" class="btn btn-danger edit-cart" type="button"> <span class="icon-edit"></span>
                                         </a></td>   
                                     <td>
                                         <div class="input-append">
-                                            <a href="#" class="btn btn-mini btn-danger" type="button"> <span class="icon-remove"></span>
+                                            <a href="../connectDB/cartDB.php?id=<?php echo $item['id']; ?>&action=delete" class="btn btn-danger" type="button"> <span class="icon-remove"></span>
                                             </a>
                                         </div>
                                     </td>
                                     <td>
-                                        <?php echo $item['price'] ?>đ 
+                                        <?php echo number_format($item['price']*$item['quanlity']); ?>đ 
                                     </td>
                                 </tr>
                             <?php } ?>
-
+                            <tr>
+                                <td><h3>Tổng tiền<h3></td>
+                                <td colspan="6" style="text-align:center;line-height: 47px;" class="text-center bg-info"> <?php echo number_format($totalPrice); ?>đ</td>
+                            </tr>
                         </tbody>
                     </table>
                     <br /> <a href="products.html" class="shopBtn btn-large"><span class="icon-arrow-left"></span> Tiếp tục mua </a> <a href="login.html" class="shopBtn btn-large pull-right">Thanh toán <span class="icon-arrow-right"></span></a>

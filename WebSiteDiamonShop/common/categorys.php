@@ -5,9 +5,6 @@
 				<li><a onclick="window.location.href='../web/productscategory.php?id=<?php echo $item['id']; ?>'"><span class="icon-circle-blank"></span><?php echo $item['name'] ?></a></li>
 			<?php } ?>
 			<li style="border: 0">&nbsp;</li>
-			<li><a class="totalInCart" href="cart.html"><strong>Đã
-						mua <span class="badge badge-warning pull-right" style="line-height: 18px;">đ</span>
-					</strong></a></li>
 		</ul>
 	</div>
 
