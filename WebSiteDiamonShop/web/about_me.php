@@ -7,7 +7,7 @@ Body Section
 
 <body>
     <?php include("../bootstrap/bootstrap.php");
-    include("../connectDB/connectDB.php");
+    include("../connectDB/registerDB.php");
     $info = getInfo();
     $categorys = getAllCategorys();
     disconnect_db();

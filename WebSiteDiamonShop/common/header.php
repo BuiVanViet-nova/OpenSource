@@ -15,7 +15,7 @@
 					<a href="#"><span class="icon-user"></span>TÊN NGƯỜI DÙNG</a>
 					<a href="#"><span class="icon-edit"></span>Đăng
 							xuất</a>
-					<a href="#"><span class="icon-edit"></span>Đăng
+					<a href="../web/register.php"><span class="icon-edit"></span>Đăng
 							ký</a>
 					<a href="../web/contact.php"><span class="icon-envelope"></span>
 						Liên hệ</a> <a href="../web/cart.php"><span

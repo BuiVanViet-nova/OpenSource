@@ -12,7 +12,7 @@
 <body>
     <?php
     include("../bootstrap/bootstrap.php");
-    require("../connectDB/connectDB.php");
+    require("../connectDB/registerDB.php");
     if(isset($_GET['keyword'])){
         $search = $_GET['keyword'];
         $arrSearch = Search($search);

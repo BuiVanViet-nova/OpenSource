@@ -13,7 +13,7 @@
 
 <body>
 	<?php include("../bootstrap/bootstrap.php");
-	include("../connectDB/connectDB.php");
+	include("../connectDB/registerDB.php");
 	$categorys = getAllCategorys();
 	$product_id = isset($_GET['id']) ? $_GET['id'] : "0";	//id là id của url
 	$product = getProduct($product_id);

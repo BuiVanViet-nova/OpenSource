@@ -1,5 +1,5 @@
 <?php
-require("../connectDB/connectDB.php");
+require("../connectDB/registerDB.php");
 
 $products = getAllProducts();
 $slides = getAllSlide();
@@ -70,7 +70,7 @@ Body Section
 								<div class="caption">
 									<h5><?php echo $item['name'] ?></h5>
 									<h4>
-										<a class="defaultBtn" href="product_details.html" title="Click to view"><span class="icon-zoom-in"></span></a>
+										<a class="defaultBtn" href="../template/assets/user/img/<?php echo $item['img'] ?>" title="Click to view"><span class="icon-zoom-in"></span></a>
 										<a class="shopBtn" href="../connectDB/cartDB.php?id=<?php echo $item['id']; ?>" title="add to cart"><span class="icon-plus"></span></a> <span class="pull-right"> <?php echo number_format($item['price']); ?>đ
 										</span>
 									</h4>

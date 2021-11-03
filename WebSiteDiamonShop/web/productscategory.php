@@ -13,7 +13,7 @@
 
 <body>
     <?php include("../bootstrap/bootstrap.php");
-    include("../connectDB/connectDB.php");
+    include("../connectDB/registerDB.php");
     $categorys = getAllCategorys();
     $productsByIDCategory = isset($_GET['id']) ? $_GET['id'] : "0";    //id là id của url
     $listProduct = getProductByIDCategory($productsByIDCategory);
@@ -44,8 +44,8 @@
                                     <div class="caption">
                                         <h5><?php echo $item['name'] ?></h5>
                                         <h4>
-											<a class="defaultBtn" href="product_details.html" title="Click to view"><span class="icon-zoom-in"></span></a>
-											<a class="shopBtn" href="#" title="add to cart"><span class="icon-plus" style="margin-top: 100px;"></span></a> <span class="pull-right">đ
+											<a class="defaultBtn" href="../template/assets/user/img/<?php echo $item['img'] ?>" title="Click to view"><span class="icon-zoom-in"></span></a>
+											<a class="shopBtn" href="../connectDB/cartDB.php?id=<?php echo $item['id'] ?>" title="add to cart"><span class="icon-plus" style="margin-top: 100px;"></span></a> <span class="pull-right">đ
 											</span>
 										</h4>
                                     </div>
