@@ -1,5 +1,6 @@
 <?php
     include("connectDB.php");
+    session_start();
     connect_db();
     global $conn;
     if(isset($_POST['reset'])){
@@ -17,30 +18,25 @@
         //check
         if($password != $repassword){
             echo "<script> alert('Mật khẩu nhập lại không hợp lệ!')</script>";
-            header("location:../web/register.php");
+            // header("location:../web/register.php");
         }else if($conn->query($query) == TRUE){
             echo "<script>alert('Thêm dữ liệu thành công')</script>";
-            header("location:../web/register.php");
+            // header("location:../web/register.php");
         }
     }
 
     if(isset($_POST['login']) && isset($_POST['username']) && isset($_POST['password'])){
         $username = $_POST['username'];
         $password = $_POST['password'];
-        $query = "SELECT * FROM `users` WHERE username='".$username."' and password = '".$password."';";
+        $query = "SELECT * FROM `users` WHERE username='$username' and password = '$password'";
         $result = $conn->query($query);
-        if($result == TRUE){
-            header("location:../decorator/index.php");
+        if($row = $result->fetch_row() > 0){
+            // echo "<script> alert('thành công'); </script>";
+            $_SESSION['username'] = $username;
+            header("location: ../decorator/index.php");
         }else{
-            echo "email hoặc password nhập sai";
+            echo "<script>alert('email hoặc password nhập sai');</script>";
         }
-        $user = [];
-        if($result){
-            $row = $result->fetch_assoc();
-            $user = $row;
-        }
-
-        var_dump($user);
         
     }
 

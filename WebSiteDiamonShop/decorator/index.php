@@ -10,6 +10,18 @@
 	href="../template/assets/user/ico/favicon.ico">
 </head>
 <body>
+	<?php
+	require("../connectDB/registerDB.php");
+	
+	
+	$products = getAllProducts();
+	$slides = getAllSlide();
+	$categorys = getAllCategorys();
+	disconnect_db();
+
+	?>
+
+
 	<?php include("../bootstrap/bootstrap.php"); ?>
 	<!-- 
 	Upper Header Section 
@@ -28,6 +40,7 @@ Lower Header Section
 
 	<!-- /container -->
 
+	
 	<div style="width:940px; height:auto" class="copyright">
 	<?php include("../common/footer.php") ?>
 	</div>
@@ -36,9 +49,6 @@ Lower Header Section
 
 	<a href="#" class="gotop"><i class="icon-double-angle-up"></i></a>
 	<!-- Placed at the end of the document so the pages load faster -->
-	
-	
 
-	
 </body>
 </html>

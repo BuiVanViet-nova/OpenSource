@@ -1,12 +1,3 @@
-<?php
-require("../connectDB/registerDB.php");
-
-$products = getAllProducts();
-$slides = getAllSlide();
-$categorys = getAllCategorys();
-disconnect_db();
-
-?>
 
 <title>Trang chủ</title>
 <style>

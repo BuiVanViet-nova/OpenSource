@@ -71,7 +71,7 @@
                             </tr>
                         </tbody>
                     </table>
-                    <br /> <a href="products.html" class="shopBtn btn-large"><span class="icon-arrow-left"></span> Tiếp tục mua </a> <a href="login.html" class="shopBtn btn-large pull-right">Thanh toán <span class="icon-arrow-right"></span></a>
+                    <br /> <a href="../decorator/index.php" class="shopBtn btn-large"><span class="icon-arrow-left"></span> Tiếp tục mua </a> <a href="login.html" class="shopBtn btn-large pull-right">Thanh toán <span class="icon-arrow-right"></span></a>
 
                 </div>
             </div>

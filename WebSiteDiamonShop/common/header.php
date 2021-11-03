@@ -12,11 +12,15 @@
 					<a class="active" href="../decorator/index.php"> <span class="icon-home"></span>
 						Home
 					</a>
-					<a href="#"><span class="icon-user"></span>TÊN NGƯỜI DÙNG</a>
-					<a href="#"><span class="icon-edit"></span>Đăng
-							xuất</a>
-					<a href="../web/register.php"><span class="icon-edit"></span>Đăng
-							ký</a>
+					
+					<?php if(isset($_SESSION['username'])) { ?>
+						<a href="#"><span class="icon-user"></span><?php echo $_SESSION['username']; ?></a>
+					
+						<a href="../connectDB/DeleteSession.php"><span class="icon-edit"></span>Đăng xuất</a>
+					<?php } ?>
+					<?php if(!isset($_SESSION['username'])) { ?>
+						<a href="../web/register.php"><span class="icon-edit"></span>Đăng nhập</a>
+					<?php }?>
 					<a href="../web/contact.php"><span class="icon-envelope"></span>
 						Liên hệ</a> <a href="../web/cart.php"><span
 						class="icon-shopping-cart"></span> Giỏ hàng <span

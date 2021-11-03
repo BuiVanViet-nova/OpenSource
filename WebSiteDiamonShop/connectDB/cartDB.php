@@ -20,6 +20,7 @@
             'quanlity' => 1
 
         ];
+        //thêm mới giỏ hàng
         if(isset($_SESSION['cart'][$id])){
             $_SESSION['cart'][$id]['quanlity'] +=1;
         }else{
@@ -35,11 +36,6 @@
         header('location: ../web/cart.php');
         
     }
-    
-    //thêm mới giỏ hàng
-
-    //cập nhật giỏ hàng
-
     
     
 ?>
