@@ -1,8 +1,8 @@
 <?php
-    include("connectDB.php");
-    session_start();
-    connect_db();
-    global $conn;
+    include("cartDB.php");
+    // session_start();
+    // connect_db();
+    // global $conn;
     if(isset($_POST['reset'])){
         $_POST['username'] = $_POST['password'] = $_POST['repassword'] = $_POST['display_name'] = $_POST['address'] = '';
     }
@@ -17,10 +17,17 @@
         
         //check
         if($password != $repassword){
-            echo "<script> alert('Mật khẩu nhập lại không hợp lệ!')</script>";
+            echo "<script language='javascript'>
+                                alert('Mật khẩu nhập lại không hợp lệ!');
+                                window.open('../web/register.php','_self', 1);
+							</script>
+						";
+            // echo "<script> alert('Mật khẩu nhập lại không hợp lệ!')</script>";
             // header("location:../web/register.php");
         }else if($conn->query($query) == TRUE){
-            echo "<script>alert('Thêm dữ liệu thành công')</script>";
+            echo "<script>alert('Đăng ký thành công');
+                    window.open('../web/register.php','_self', 1);
+                    </script>";
             // header("location:../web/register.php");
         }
     }
@@ -31,11 +38,16 @@
         $query = "SELECT * FROM `users` WHERE username='$username' and password = '$password'";
         $result = $conn->query($query);
         if($row = $result->fetch_row() > 0){
-            // echo "<script> alert('thành công'); </script>";
             $_SESSION['username'] = $username;
+            // echo "<script language='javascript'> alert('thành công'); </script>";
             header("location: ../decorator/index.php");
+            
         }else{
-            echo "<script>alert('email hoặc password nhập sai');</script>";
+            echo "<script language='javascript'>
+                                window.open('../web/register.php','_self', 1);
+								alert('email hoặc password nhập sai');
+							</script>
+						";
         }
         
     }

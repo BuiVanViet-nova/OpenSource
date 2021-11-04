@@ -6,6 +6,7 @@ Body Section
 -->
 
 <body>
+    <?php $page= "compair"; ?>
     <?php include("../bootstrap/bootstrap.php");
     include("../connectDB/registerDB.php");
     $info = getInfo();

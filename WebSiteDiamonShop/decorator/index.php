@@ -10,6 +10,7 @@
 	href="../template/assets/user/ico/favicon.ico">
 </head>
 <body>
+	<?php $page='index'; ?>
 	<?php
 	require("../connectDB/registerDB.php");
 	

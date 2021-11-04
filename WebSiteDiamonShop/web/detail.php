@@ -15,7 +15,7 @@
 	<?php include("../bootstrap/bootstrap.php");
 	include("../connectDB/registerDB.php");
 	$categorys = getAllCategorys();
-	$product_id = isset($_GET['id']) ? $_GET['id'] : "0";	//id là id của url
+	$product_id = isset($_GET['id_product']) ? $_GET['id_product'] : "0";	//id là id của url
 	$product = getProduct($product_id);
 	foreach ($product as $index => $item) {
 		if ($index == "id_category")
@@ -120,7 +120,7 @@ Body Section
 
 											<div class="btn-group">
 												<a href="cart.php?id=<?php echo $item['id']; ?>" class="defaultBtn"><span class=" icon-shopping-cart"></span> Thêm giỏ hàng</a>
-												<a style="cursor:pointer" href="detail.php?id=<?php echo $item['id']; ?>" class="shopBtn">Chi tiết</a>
+												<a style="cursor:pointer" href="detail.php?id_product=<?php echo $item['id']; ?>" class="shopBtn">Chi tiết</a>
 											</div>
 										</form>
 									</div>

@@ -6,6 +6,7 @@ Body Section
 -->
 
 <body>
+    <?php $page="info"; ?>
     <?php include("../bootstrap/bootstrap.php");
     include("../connectDB/registerDB.php");
     $info = getInfo();

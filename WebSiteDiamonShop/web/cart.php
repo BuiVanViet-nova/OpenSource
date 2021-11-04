@@ -5,8 +5,9 @@
 </head>
 
 <body>
+    <?php $page="cart"; ?>
     <?php include("../bootstrap/bootstrap.php");
-    include("../connectDB/cartDB.php");
+    include("../connectDB/registerDB.php");
     $cart = (isset($_SESSION['cart'])) ? $_SESSION['cart'] : [];
     disconnect_db(); ?>
     <div class="container">
@@ -34,7 +35,6 @@
                                 <th>Mô tả</th>
                                 <th>Giá bán</th>
                                 <th>Số lượng</th>
-                                <th>Chỉnh sửa</th>
                                 <th>Xóa</th>
                                 <th>Tổng tiền</th>
                             </tr>
@@ -52,8 +52,7 @@
                                         <?php echo $item['price']; ?>đ
                                     </td>
                                     <td><input type="number" min="0" max="1000" class="span1" style="max-width: 50px" placeholder="1" name="number" size="16" value="<?php echo $item['quanlity']; ?>"></td>
-                                    <td><a href="#" data-id="<?php echo $key ?>" class="btn btn-danger edit-cart" type="button"> <span class="icon-edit"></span>
-                                        </a></td>   
+                                     
                                     <td>
                                         <div class="input-append">
                                             <a href="../connectDB/cartDB.php?id=<?php echo $item['id']; ?>&action=delete" class="btn btn-danger" type="button"> <span class="icon-remove"></span>
@@ -71,7 +70,8 @@
                             </tr>
                         </tbody>
                     </table>
-                    <br /> <a href="../decorator/index.php" class="shopBtn btn-large"><span class="icon-arrow-left"></span> Tiếp tục mua </a> <a href="login.html" class="shopBtn btn-large pull-right">Thanh toán <span class="icon-arrow-right"></span></a>
+                    <br /> <a href="../decorator/index.php" class="shopBtn btn-large"><span class="icon-arrow-left"></span> Tiếp tục mua </a> 
+                    <a href="bill.php" class="shopBtn btn-large pull-right">Thanh toán <span class="icon-arrow-right"></span></a>
 
                 </div>
             </div>

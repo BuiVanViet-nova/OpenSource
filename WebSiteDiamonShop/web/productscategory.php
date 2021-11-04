@@ -15,7 +15,7 @@
     <?php include("../bootstrap/bootstrap.php");
     include("../connectDB/registerDB.php");
     $categorys = getAllCategorys();
-    $productsByIDCategory = isset($_GET['id']) ? $_GET['id'] : "0";    //id là id của url
+    $productsByIDCategory = isset($_GET['id_category']) ? $_GET['id_category'] : "0";    //id là id của url
     $listProduct = getProductByIDCategory($productsByIDCategory);
     disconnect_db();
     ?>
@@ -39,8 +39,8 @@
                             <?php foreach ($listProduct as $item) {
                                 echo "<li class='span4' style='margin-left:20px;width:217px; height:377px' >"; ?>
                                 <div class="thumbnail">
-                                    <a class="zoomTool" style="cursor:pointer" onclick="window.location.href='../web/detail.php?id=<?php echo $item['id']; ?>'" title="add to cart"><span class="icon-search"></span> QUICK
-                                        VIEW</a> <a href="#"><img onclick="window.location.href='../web/detail.php?id=<?php echo $item['id']; ?>'" id="img" src="../template/assets/user/img/<?php echo $item['img'] ?>" alt=""></a>
+                                    <a class="zoomTool" style="cursor:pointer" onclick="window.location.href='../web/detail.php?id_product=<?php echo $item['id']; ?>'" title="add to cart"><span class="icon-search"></span> QUICK
+                                        VIEW</a> <a href="#"><img onclick="window.location.href='../web/detail.php?id_product=<?php echo $item['id']; ?>'" id="img" src="../template/assets/user/img/<?php echo $item['img'] ?>" alt=""></a>
                                     <div class="caption">
                                         <h5><?php echo $item['name'] ?></h5>
                                         <h4>

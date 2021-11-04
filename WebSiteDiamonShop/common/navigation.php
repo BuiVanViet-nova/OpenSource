@@ -14,11 +14,11 @@
 			</a>
 			<div class="nav-collapse">
 				<ul class="nav">
-					<li class="active"><a href="../decorator/index.php">Trang chủ</a></li>
+					<li class="<?php if($page == 'index'){echo 'active';} ?>"><a href="../decorator/index.php">Trang chủ</a></li>
 					<li><a href="https://github.com/BuiVanViet-nova/OpenSource/tree/master/BaitapThucHanh" target="_blank">Bài tập</a></li>
-					<li><a href="../web/about_me.php">Thông tin cá nhân</a></li>
-					<li><a href="../web/cart.php">Giỏ hàng</a></li>
-					<li><a href="../web/compair.php">So sánh</a></li>
+					<li class="<?php if($page == 'info'){echo 'active';} ?>" ><a href="../web/about_me.php">Thông tin cá nhân</a></li>
+					<li class="<?php if($page == 'cart'){echo 'active';} ?>"><a href="../web/cart.php">Giỏ hàng</a></li>
+					<li class="<?php if($page == 'compair'){echo 'active';} ?>" ><a href="../web/compair.php">So sánh</a></li>
 					<li><a href="../web/contact.php">Thêm sản phẩm</a></li>
 				</ul>
 				<form action="../web/search.php" method="GET" class="navbar-search pull-left">

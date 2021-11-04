@@ -2,7 +2,7 @@
 	<div class="well well-small">
 		<ul class="nav nav-list">
 			<?php foreach ($categorys as $item) { ?>
-				<li><a onclick="window.location.href='../web/productscategory.php?id=<?php echo $item['id']; ?>'"><span class="icon-circle-blank"></span><?php echo $item['name'] ?></a></li>
+				<li><a onclick="window.location.href='../web/productscategory.php?id_category=<?php echo $item['id']; ?>'"><span class="icon-circle-blank" style="<?php if(isset($item['id'])){ echo "background: blue; border-radius:50%";} ?>"></span><?php echo $item['name'] ?></a></li>
 			<?php } ?>
 			<li style="border: 0">&nbsp;</li>
 		</ul>
