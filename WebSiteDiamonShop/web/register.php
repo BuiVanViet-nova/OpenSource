@@ -75,9 +75,9 @@
                             <h5>ĐĂNG NHẬP HỆ THỐNG</h5>
                             <form action="../connectDB/registerDB.php" method="POST">
                                 <div class="control-group">
-                                    <label class="control-label" for="inputEmail">Email</label>
+                                    <label class="control-label" for="inputEmail">Tài khoản</label>
                                     <div class="controls">
-                                        <input type="email" class="span3" placeholder="Mời nhập email" name="username" />
+                                        <input type="text" class="span3" placeholder="Email hoặc tên tài khoản" name="username" />
                                     </div>
                                 </div>
                                 <div class="control-group">

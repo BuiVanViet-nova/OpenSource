@@ -5,6 +5,9 @@
             width: 207px;
             height: 250px;
         }
+        #defaultBtn{
+            line-height: 100px;
+        }
     </style>
     <!-- Favicons -->
     <link rel="shortcut icon"
@@ -32,12 +35,11 @@
                 </select>
                 <br>
                 <br>
-
-                <?php if (count($listProduct) > 0) { ?>
                     <div class="row-fluid">
+                    <?php if (count($listProduct) > 0) { ?>
                         <ul class="thumbnails">
                             <?php foreach ($listProduct as $item) {
-                                echo "<li class='span4' style='margin-left:20px;width:217px; height:377px' >"; ?>
+                                echo "<li class='span4' style='margin-left:20px;width:220px; height:377px'>"; ?>
                                 <div class="thumbnail">
                                     <a class="zoomTool" style="cursor:pointer" onclick="window.location.href='../web/detail.php?id_product=<?php echo $item['id']; ?>'" title="add to cart"><span class="icon-search"></span> QUICK
                                         VIEW</a> <a href="#"><img onclick="window.location.href='../web/detail.php?id_product=<?php echo $item['id']; ?>'" id="img" src="../template/assets/user/img/<?php echo $item['img'] ?>" alt=""></a>
@@ -45,8 +47,11 @@
                                         <h5><?php echo $item['name'] ?></h5>
                                         <h4>
 											<a class="defaultBtn" href="../template/assets/user/img/<?php echo $item['img'] ?>" title="Click to view"><span class="icon-zoom-in"></span></a>
-											<a class="shopBtn" href="../connectDB/cartDB.php?id=<?php echo $item['id'] ?>" title="add to cart"><span class="icon-plus" style="margin-top: 100px;"></span></a> <span class="pull-right">đ
-											</span>
+											<a id="shopBtn" class="shopBtn" href="../connectDB/cartDB.php?id=<?php echo $item['id'] ?>" title="add to cart"><span class="icon-plus" style="margin-top: 100px;"></span></a> 
+                                            <?php if(isset($_SESSION['admin'])) { ?>
+										    <a style="width: 20px;height: 32px; border-radius:2px" class="btn btn-mini btn-danger edit-cart" title="edit" type="button"> <span style="line-height: 30px;" class="icon-edit icon-2x"></span></a>
+										    <?php } ?>
+                                            <span class="pull-right"><?php echo number_format($item['price']); ?>đ</span>
 										</h4>
                                     </div>
                                 </div>

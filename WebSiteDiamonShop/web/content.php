@@ -5,6 +5,29 @@
 		width: 207px;
 		height: 250px;
 	}
+	.pagination {
+	display: flex;
+	justify-content: center;
+	}
+
+	.pagination a {
+		color: black;
+		float: left;
+		padding: 8px 16px;
+		text-decoration: none;
+		transition: background-color .3s;
+		border: 1px solid #ddd;
+	}
+
+	.pagination a.active {
+		background-color: #4CAF50;
+		color: white;
+		border: 1px solid #4CAF50;
+	}
+
+	.pagination a:hover:not(.active) {
+		background-color: #ddd;
+	}
 </style>
 <!-- Favicons -->
 <link rel="shortcut icon" href="../template/assets/user/ico/favicon.ico">
@@ -53,7 +76,7 @@ Body Section
 				<?php if (count($products) > 0) { ?>
 					<ul class="thumbnails">
 						<?php foreach ($products as $item) {
-							echo "<li class='span4' style='margin-left:6px;width:217px; height:377px' >"; ?>
+							echo "<li class='span4' style='margin-left:6px;width:220px; height:377px' >"; ?>
 							<!-- <li class="span4"> -->
 							<div class="thumbnail">
 								<a class="zoomTool" style="cursor:pointer" onclick="window.location.href='../web/detail.php?id_product=<?php echo $item['id']; ?>'"><span class="icon-search"></span>
@@ -61,15 +84,28 @@ Body Section
 								<div class="caption">
 									<h5><?php echo $item['name'] ?></h5>
 									<h4>
-										<a class="defaultBtn" href="../template/assets/user/img/<?php echo $item['img'] ?>" title="Click to view"><span class="icon-zoom-in"></span></a>
-										<a class="shopBtn" href="../connectDB/cartDB.php?id=<?php echo $item['id']; ?>" title="add to cart"><span class="icon-plus"></span></a> <span class="pull-right"> <?php echo number_format($item['price']); ?>đ
-										</span>
+										<a class="defaultBtn" href="../template/assets/user/img/<?php echo $item['img'] ?>" title="Click to view"><span style="font-size: 16px;" class="icon-zoom-in"></span></a>
+										<a class="shopBtn" href="../connectDB/cartDB.php?id=<?php echo $item['id']; ?>" title="add to cart"><span class="icon-plus"></span></a> 
+										<?php if(isset($_SESSION['admin'])) { ?>
+										<a style="width: 20px;height: 32px; border-radius:2px" class="btn btn-mini btn-danger edit-cart" title="edit" type="button"> <span style="line-height: 30px;" class="icon-edit icon-2x"></span></a>
+										<?php } ?>
+										<span class="pull-right"> <?php echo number_format($item['price']); ?>đ
 									</h4>
 								</div>
 							</div>
 							</li>
 						<?php } ?>
 					</ul>
+					<div class="pagination">
+					<a href="#">&laquo;</a>
+					<a href="#">1</a>
+					<a href="#" class="active">2</a>
+					<a href="#">3</a>
+					<a href="#">4</a>
+					<a href="#">5</a>
+					<a href="#">6</a>
+					<a href="#">&raquo;</a>
+				</div>
 				<?php } ?>
 			</div>
 		</div>

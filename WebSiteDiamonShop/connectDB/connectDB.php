@@ -197,9 +197,8 @@
             }
         }
         return $products;
-        
     }
-
+    
     function addProduct(){
         
     }

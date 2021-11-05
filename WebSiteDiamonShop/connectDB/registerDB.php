@@ -16,6 +16,14 @@
         $query = "INSERT INTO `users`(`username`, `password`, `display_name`, `address`) VALUES ('$username','$password','$display_name','$address')";
         
         //check
+        if($username == null || $password == null || $display_name == null){
+            echo "<script language='javascript'>
+                                alert('vui lòng nhập đầy đủ thông tin!');
+                                window.open('../web/register.php','_self', 1);
+							</script>
+						";
+            return;
+        }
         if($password != $repassword){
             echo "<script language='javascript'>
                                 alert('Mật khẩu nhập lại không hợp lệ!');
@@ -33,6 +41,8 @@
     }
 
     if(isset($_POST['login']) && isset($_POST['username']) && isset($_POST['password'])){
+        unset($_SESSION['username']);
+        unset($_SESSION['admin']);
         $username = $_POST['username'];
         $password = $_POST['password'];
         $query = "SELECT * FROM `users` WHERE username='$username' and password = '$password'";
@@ -49,7 +59,24 @@
 							</script>
 						";
         }
+        $query2 = "SELECT * FROM `admin` WHERE admin_name='$username' and admin_password = '$password'";
+        $result2 = $conn->query($query2);
+        if($row = $result2->fetch_row() > 0){
+            $_SESSION['admin'] = 'admin@gmail.com';
+            // echo "<script language='javascript'> alert('thành công'); </script>";
+            header("location: ../decorator/index.php");
+            
+        }else{
+            echo "<script language='javascript'>
+                                window.open('../web/register.php','_self', 1);
+								alert('email hoặc password nhập sai');
+							</script>
+						";
+        }
+
         
     }
+
+
 
 ?>

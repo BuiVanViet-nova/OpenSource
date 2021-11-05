@@ -83,7 +83,9 @@
             </div>
 
         </div>
-
+        <div style="width:940px; height:auto" class="copyright">
+            <?php include("../common/footer.php") ?>
+            </div>
     </div>
 </body>
 

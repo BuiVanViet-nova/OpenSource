@@ -65,14 +65,9 @@ Body Section
 								</div>
 
 								<div class="control-group">
-									<label class="control-label"><span>Màu sắc</span></label>
+								<label class="control-label"><span>Ngày nhập</span></label>
 									<div class="controls">
-										<select class="span11">
-											<option>Đỏ</option>
-											<option>Đen</option>
-											<option>Vàng</option>
-											<option>Trắng</option>
-										</select>
+										<input type="text" value="<?php echo $product['created_date'] ?>" readonly>
 									</div>
 								</div>
 

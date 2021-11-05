@@ -22,7 +22,6 @@
 
 	?>
 
-
 	<?php include("../bootstrap/bootstrap.php"); ?>
 	<!-- 
 	Upper Header Section 

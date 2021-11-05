@@ -12,13 +12,19 @@
 					<a class="active" href="../decorator/index.php"> <span class="icon-home"></span>
 						Home
 					</a>
-					
+					<?php if(isset($_SESSION['admin'])){ ?>
+						<a href="#"><span class="icon-user"></span><?php echo $_SESSION['admin']; ?></a>
+						<a href="../connectDB/DeleteSession.php"><span class="icon-edit"></span>Đăng xuất</a>
+						<a href="../web/register.php"><span class="icon-edit"></span>Đăng nhập</a>
+					<?php } ?>
+
 					<?php if(isset($_SESSION['username'])) { ?>
 						<a href="#"><span class="icon-user"></span><?php echo $_SESSION['username']; ?></a>
 					
 						<a href="../connectDB/DeleteSession.php"><span class="icon-edit"></span>Đăng xuất</a>
 					<?php } ?>
-					<?php if(!isset($_SESSION['username'])) { ?>
+
+					<?php if(!isset($_SESSION['username']) && !isset($_SESSION['admin'])) { ?>
 						<a href="../web/register.php"><span class="icon-edit"></span>Đăng nhập</a>
 					<?php }?>
 					<a href="../web/contact.php"><span class="icon-envelope"></span>
