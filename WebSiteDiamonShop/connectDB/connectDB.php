@@ -1,7 +1,6 @@
 <?php 
     //biến toàn cục
     global $conn;
-
     function connect_db(){
         global $conn;
         //1, Kết nối cơ sở dữ liệu kiểu thủ tục
@@ -198,9 +197,4 @@
         }
         return $products;
     }
-    
-    function addProduct(){
-        
-    }
-
 ?>

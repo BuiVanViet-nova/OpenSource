@@ -49,7 +49,7 @@
 											<a class="defaultBtn" href="../template/assets/user/img/<?php echo $item['img'] ?>" title="Click to view"><span class="icon-zoom-in"></span></a>
 											<a id="shopBtn" class="shopBtn" href="../connectDB/cartDB.php?id=<?php echo $item['id'] ?>" title="add to cart"><span class="icon-plus" style="margin-top: 100px;"></span></a> 
                                             <?php if(isset($_SESSION['admin'])) { ?>
-										    <a style="width: 20px;height: 32px; border-radius:2px" class="btn btn-mini btn-danger edit-cart" title="edit" type="button"> <span style="line-height: 30px;" class="icon-edit icon-2x"></span></a>
+										    <a href="editProduct.php?id_product=<?php echo $item['id']; ?>" style="width: 20px;height: 32px; border-radius:2px" class="btn btn-mini btn-danger edit-cart" title="edit" type="button"> <span style="line-height: 30px;" class="icon-edit icon-2x"></span></a>
 										    <?php } ?>
                                             <span class="pull-right"><?php echo number_format($item['price']); ?>đ</span>
 										</h4>

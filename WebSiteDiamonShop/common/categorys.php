@@ -23,11 +23,11 @@
 	<ul class="nav nav-list promowrapper">
 		<li>
 			<div class="thumbnail">
-				<a class="zoomTool" href="product_details.html" title="add to cart"><span class="icon-search"></span> QUICK
+				<a class="zoomTool" href="#" title="add to cart"><span class="icon-search"></span> QUICK
 					VIEW</a> <img src="../template/assets/user/img/bootstrap-ecommerce-templates.png" alt="bootstrap ecommerce templates">
 				<div class="caption">
 					<h4>
-						<a class="defaultBtn" href="product_details.html">VIEW</a> <span class="pull-right">$22.00</span>
+						<a class="defaultBtn" href="#">VIEW</a> <span class="pull-right">$22.00</span>
 					</h4>
 				</div>
 			</div>
@@ -35,11 +35,11 @@
 		<li style="border: 0">&nbsp;</li>
 		<li>
 			<div class="thumbnail">
-				<a class="zoomTool" href="product_details.html" title="add to cart"><span class="icon-search"></span> QUICK
+				<a class="zoomTool" href="#" title="add to cart"><span class="icon-search"></span> QUICK
 					VIEW</a> <img src="../template/assets/user/img/shopping-cart-template.png" alt="shopping cart template">
 				<div class="caption">
 					<h4>
-						<a class="defaultBtn" href="product_details.html">VIEW</a> <span class="pull-right">$22.00</span>
+						<a class="defaultBtn" href="#">VIEW</a> <span class="pull-right">$22.00</span>
 					</h4>
 				</div>
 			</div>
@@ -47,11 +47,11 @@
 		<li style="border: 0">&nbsp;</li>
 		<li>
 			<div class="thumbnail">
-				<a class="zoomTool" href="product_details.html" title="add to cart"><span class="icon-search"></span> QUICK
+				<a class="zoomTool" href="#" title="add to cart"><span class="icon-search"></span> QUICK
 					VIEW</a> <img src="../template/assets/user/img/bootstrap-template.png" alt="bootstrap template">
 				<div class="caption">
 					<h4>
-						<a class="defaultBtn" href="product_details.html">VIEW</a> <span class="pull-right">$22.00</span>
+						<a class="defaultBtn" href="#">VIEW</a> <span class="pull-right">$22.00</span>
 					</h4>
 				</div>
 			</div>

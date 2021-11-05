@@ -1,6 +1,8 @@
 
 <title>Trang chủ</title>
+
 <style>
+	
 	#img {
 		width: 207px;
 		height: 250px;
@@ -73,9 +75,36 @@ Body Section
 			</h3>
 			<hr class="soften" />
 			<div class="row-fluid">
-				<?php if (count($products) > 0) { ?>
+				<?php
+					connect_db();
+					global $conn;
+					$rowsPerPage=9; //số mẩu tin trên mỗi trang
+							if (!isset($_GET['page']))
+							{ 
+								$_GET['page'] = 1;
+							}
+						//vị trí của mẩu tin đầu tiên trên mỗi trang
+						$offset =(($_GET['page']-1)*$rowsPerPage);
+						// Chuan bi cau truy van & Thuc thi cau truy van
+						$query = "SELECT * FROM products LIMIT $offset ,$rowsPerPage";
+						$result = $conn->query($query);
+						$products1 = [];
+						if($result){
+							//lặp từng kết quả sql trả về
+							while($row = $result->fetch_assoc()){
+								//đưa dữ liệu sản phẩm vào mảng products
+								$products1[] = $row;
+							}
+						}
+						$re = mysqli_query($conn, 'select * from products');
+						//tổng số mẩu tin cần hiển thị
+						$numRows = mysqli_num_rows($re);
+						//tổng số trang
+						$maxPage = floor($numRows/$rowsPerPage) + 1;
+				?>
+				<?php if (count($products1) > 0) { ?>
 					<ul class="thumbnails">
-						<?php foreach ($products as $item) {
+						<?php foreach ($products1 as $item) {
 							echo "<li class='span4' style='margin-left:6px;width:220px; height:377px' >"; ?>
 							<!-- <li class="span4"> -->
 							<div class="thumbnail">
@@ -87,7 +116,7 @@ Body Section
 										<a class="defaultBtn" href="../template/assets/user/img/<?php echo $item['img'] ?>" title="Click to view"><span style="font-size: 16px;" class="icon-zoom-in"></span></a>
 										<a class="shopBtn" href="../connectDB/cartDB.php?id=<?php echo $item['id']; ?>" title="add to cart"><span class="icon-plus"></span></a> 
 										<?php if(isset($_SESSION['admin'])) { ?>
-										<a style="width: 20px;height: 32px; border-radius:2px" class="btn btn-mini btn-danger edit-cart" title="edit" type="button"> <span style="line-height: 30px;" class="icon-edit icon-2x"></span></a>
+										<a onclick="window.location.href='../web/editProduct.php?id_product=<?php echo $item['id']; ?>'" style="width: 20px;height: 32px; border-radius:2px" class="btn btn-mini btn-danger edit-cart" title="edit" type="button"> <span style="line-height: 30px;" class="icon-edit icon-2x"></span></a>
 										<?php } ?>
 										<span class="pull-right"> <?php echo number_format($item['price']); ?>đ
 									</h4>
@@ -96,22 +125,30 @@ Body Section
 							</li>
 						<?php } ?>
 					</ul>
-					<div class="pagination">
-					<a href="#">&laquo;</a>
-					<a href="#">1</a>
-					<a href="#" class="active">2</a>
-					<a href="#">3</a>
-					<a href="#">4</a>
-					<a href="#">5</a>
-					<a href="#">6</a>
-					<a href="#">&raquo;</a>
-				</div>
+					<ul class="pagination"><?php //tạo link tương ứng tới các trang
+						//gắn thêm nút Back
+						
+						if($_GET['page']>1)
+						{
+							
+							echo "<a href=" .$_SERVER['PHP_SELF']."?page=".($_GET['page']-1).">Back</a>";}
+							for ($i=1 ; $i<=$maxPage ; $i++) //tạo link tương ứng tới các trang
+							{ 
+								if ($i == $_GET['page'])
+									echo "<b style='color: green'>Trang".$i."</b>"; //trang hiện tại sẽ được bôi đậm
+								else {
+									echo "<a href=" .$_SERVER['PHP_SELF']."?page=".$i.">".$i."</a> ";
+									
+								}
+							}
+							if($_GET['page']<$maxPage){
+								//gắn thêm nút Next
+								echo "<a href=". $_SERVER['PHP_SELF']."?page=".($_GET['page']+1).">Next</a>";
+							}
+							?>
+							</ul>
 				<?php } ?>
 			</div>
-		</div>
-		<hr>
-		<div class="well well-small">
-			<a class="btn btn-mini pull-right" href="#">Xem thêm <span class="icon-plus"></span></a> Tất cả sản phẩm
 		</div>
 	</div>
 </body>

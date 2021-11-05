@@ -19,7 +19,9 @@
 					<li class="<?php if($page == 'info'){echo 'active';} ?>" ><a href="../web/about_me.php">Thông tin cá nhân</a></li>
 					<li class="<?php if($page == 'cart'){echo 'active';} ?>"><a href="../web/cart.php">Giỏ hàng</a></li>
 					<li class="<?php if($page == 'compair'){echo 'active';} ?>" ><a href="../web/compair.php">So sánh</a></li>
-					<li><a href="../web/contact.php">Thêm sản phẩm</a></li>
+					<?php if(isset($_SESSION['admin'])){ ?>
+						<li class="<?php if($page == 'addProduct'){echo 'active';} ?>" ><a href="../web/addProduct.php">Thêm sản phẩm</a></li>
+					<?php } ?>
 				</ul>
 				<form action="../web/search.php" method="GET" class="navbar-search pull-left">
 					<input type="text" value="<?php echo (isset($_GET['keyword'])) ? $_GET['keyword'] : ''; ?>" name="keyword" placeholder="Search" class="search-query span2">
