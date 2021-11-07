@@ -29,10 +29,7 @@
         <div class="row">
             <?php include("../common/categorys.php"); ?>
             <div class="row">
-                <span style="margin-left: 25px;">Danh sách sản phẩm</span> <select class="pull-right">
-                    <option>A-Z</option>
-                    <option>Cao - thấp</option>
-                </select>
+                <span style="margin-left: 25px; font-size: 20px;">Danh sách sản phẩm</span> 
                 <br>
                 <br>
                     <div class="row-fluid">

@@ -103,13 +103,6 @@ Body Section
 									</div>
 								</div>
                                 <div class="control-group">
-									<label class="control-label"><span>Ngày nhập khẩu</span></label>
-									<div class="controls">
-                                        <?php $date = date('Y-m-d H:i:s')?>
-										<input style="height: 30px;" type="text" name="dateProduct" value="<?php echo $date; ?>" readonly>
-									</div>
-								</div>
-                                <div class="control-group">
 									<label class="control-label"><span>Ngày cập nhật</span></label>
 									<div class="controls">
                                         <?php $date = date('Y-m-d H:i:s')?>
@@ -117,6 +110,7 @@ Body Section
 									</div>
 								</div>
 								<button type="submit" name="editProduct" class="shopBtn"><span class="icon-shopping-cart"></span> Chỉnh sửa</button>
+								<button onclick="return Del(<?php echo $item['name']; ?>)" type="submit" name="deleteProduct" class="btn btn-danger"><span class="icon-remove"></span> Xóa sản phẩm</button>
 							</form>
 						</div>
 					</div>

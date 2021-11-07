@@ -18,3 +18,8 @@
 	<script
 		src="../template/assets/user/js/jquery.scrollTo-1.4.3.1-min.js'/>"></script>
 	<script src="../template/assets/user/js/shop.js'/>"></script>
+	<script>
+        function Del(name){
+            return confirm("Bạn có chắn muốn xóa sản phẩm: " + name + "?");
+        }
+    </script>

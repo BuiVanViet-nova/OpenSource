@@ -62,9 +62,7 @@ Body Section
 		Featured Products
 		-->
             <div class="well well-small">
-                <h3>
-                    <a class="btn btn-mini pull-right" href="products.html" title="View more">VIew More<span class="icon-plus"></span></a> Sản
-                    phẩm nổi bật
+                <h3>Sản phẩm nổi bật
                 </h3>
                 <hr class="soften" />
                 <div class="row-fluid">

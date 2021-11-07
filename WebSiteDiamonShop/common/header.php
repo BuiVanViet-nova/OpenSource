@@ -13,13 +13,13 @@
 						Home
 					</a>
 					<?php if(isset($_SESSION['admin'])){ ?>
-						<a href="#"><span class="icon-user"></span><?php echo $_SESSION['admin']; ?></a>
+						<a href="#"><span class="icon-user"></span><?php echo $_SESSION['admin']['display_name']; ?></a>
 						<a href="../connectDB/DeleteSession.php"><span class="icon-edit"></span>Đăng xuất</a>
 						<a href="../web/register.php"><span class="icon-edit"></span>Đăng nhập</a>
 					<?php } ?>
 
 					<?php if(isset($_SESSION['username'])) { ?>
-						<a href="#"><span class="icon-user"></span><?php echo $_SESSION['username']; ?></a>
+						<a href="#"><span class="icon-user"></span><?php echo $_SESSION["username"]["display_name"]; ?></a>
 					
 						<a href="../connectDB/DeleteSession.php"><span class="icon-edit"></span>Đăng xuất</a>
 					<?php } ?>

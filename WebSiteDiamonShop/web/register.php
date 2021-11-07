@@ -3,6 +3,9 @@
 
 <head>
     <meta charset="UTF-8">
+    
+    <link rel="shortcut icon"
+	href="../template/assets/user/ico/favicon.ico">
     <title>Đăng ký tài khoản</title>
 </head>
 

@@ -45,12 +45,35 @@
         unset($_SESSION['admin']);
         $username = $_POST['username'];
         $password = $_POST['password'];
-        $query = "SELECT * FROM `users` WHERE username='$username' and password = '$password'";
+   
+        $query = "SELECT * FROM `users` WHERE username ='$username' and password = '$password'";
+
         $result = $conn->query($query);
-        if($row = $result->fetch_row() > 0){
-            $_SESSION['username'] = $username;
+        if(mysqli_num_rows($result) > 0){ 
+            if(mysqli_num_rows($result)){
+                while($row = $result->fetch_array()){
+                        $id = $row["id"];
+                        $display_name = $row["display_name"];
+                        $address = $row["address"];
+                }
+            }
+            $_SESSION['username'] =[
+                "id" => $id,
+                "email" => $username,
+                "display_name" => $display_name,
+                "address" => $address,
+            ];
+            
+ 
             // echo "<script language='javascript'> alert('thành công'); </script>";
-            header("location: ../decorator/index.php");
+            if(isset($_GET['action1'])){
+                $action1 = $_GET['action1'];
+                header("location: ".$action1.'.php');
+            }else{
+       
+                header("location: ../decorator/index.php");
+            }
+            
             
         }else{
             echo "<script language='javascript'>
@@ -61,8 +84,15 @@
         }
         $query2 = "SELECT * FROM `admin` WHERE admin_name='$username' and admin_password = '$password'";
         $result2 = $conn->query($query2);
-        if($row = $result2->fetch_row() > 0){
-            $_SESSION['admin'] = 'admin@gmail.com';
+        if(mysqli_num_rows($result2) > 0){ 
+            if(mysqli_num_rows($result2)){
+                while($row = $result2->fetch_array()){
+                    $display_name = $row["display_name"];
+                }
+            }
+            $_SESSION['admin'] =[
+                "display_name" => $display_name,
+            ];
             // echo "<script language='javascript'> alert('thành công'); </script>";
             header("location: ../decorator/index.php");
             
@@ -76,7 +106,6 @@
 
         
     }
-
 
 
 ?>

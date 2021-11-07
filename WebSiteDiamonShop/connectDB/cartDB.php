@@ -30,6 +30,7 @@
         //Xóa sản phẩm khỏi giỏ hàng
         $action = (isset($_GET['action'])) ? $_GET['action'] : 'add';
         if($action == 'delete'){
+            // echo "<script>confirm('Bạn có chắc muốn xóa sản phẩm này');</script>";
             unset($_SESSION['cart'][$id]);
         }
         var_dump($action);

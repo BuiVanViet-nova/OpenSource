@@ -39,7 +39,7 @@ Body Section
 							<h3>Nhập thông tin sản phẩm cần thêm</h3>
 							<hr class="soft" />
 
-							<form class="form-horizontal qtyFrm" method="GET" action="../connectDB/productDB.php">
+							<form class="form-horizontal qtyFrm" method="GET" action="../connectDB/productDB.php" enctype="multipart/form-data">
 								<div class="control-group">
 									<label class="control-label"><span>Thể loại</span></label>
 									<div class="controls">
@@ -73,7 +73,7 @@ Body Section
                                 <div class="control-group">
 									<label class="control-label"><span>Hình ảnh</span></label>
 									<div class="controls">
-										<input style="height: 30px;" type="text" name="imgProduct">
+										<input style="height: 30px;" type="file" name="imgProduct" >
 									</div>
 								</div>
                                 <div class="control-group">

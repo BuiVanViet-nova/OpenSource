@@ -72,6 +72,13 @@ Body Section
 								</div>
 
 								<div class="control-group">
+								<label class="control-label"><span>Ngày cập nhật</span></label>
+									<div class="controls">
+										<input type="text" value="<?php echo $product['updated_date'] ?>" readonly>
+									</div>
+								</div>
+
+								<div class="control-group">
 									<label class="control-label"><span>Giá</span></label>
 									<div class="controls">
 										<input type="text" value="<?php echo $product['price'] ?>" readonly>

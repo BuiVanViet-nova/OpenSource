@@ -3,12 +3,13 @@
 
 <head>
     <meta charset="UTF-8">
+    <link rel="shortcut icon" href="../template/assets/user/ico/favicon.ico">
     <title>Thanh toán</title>
 </head>
 
 <body>
     <?php include("../bootstrap/bootstrap.php");
-    include("../connectDB/registerDB.php");
+    include("../connectDB/check_outDB.php");
     $categorys = getAllCategorys();
     disconnect_db();
     ?>
@@ -31,44 +32,44 @@
                         <div class="span4">
                             <div class="well">
                                 <br />
-                                <form:form action="checkout" method="POST" modelAttribute="bills" class="form-horizontal">
+                                <form action="../connectDB/check_outDB.php" method="POST" modelAttribute="bills" class="form-horizontal">
                                     <h3>Thanh toán đơn hàng</h3>
                                     <div class="control-group">
                                         <label class="control-label">Họ tên <sup>*</sup></label>
                                         <div class="controls">
-                                            <input type="text" placeholder=" Field name">
+                                            <input type="text" name="name"  value="<?php if(isset($_SESSION['username'])) echo $_SESSION['username']['display_name'] ?>"  placeholder=" Field name">
                                         </div>
                                     </div>
                                     <div class="control-group">
                                         <label class="control-label">Email <sup>*</sup></label>
                                         <div class="controls">
-                                            <input type="text" placeholder=" Field name">
+                                            <input type="text" name="email"  value="<?php if(isset($_SESSION['username'])) echo $_SESSION['username']['email'] ?>" placeholder=" Field name">
                                         </div>
                                     </div>
                                     <div class="control-group">
-                                        <label class="control-label">Liên hệ <sup>*</sup></label>
+                                        <label class="control-label">Số ĐT <sup>*</sup></label>
                                         <div class="controls">
-                                            <input type="text" placeholder=" Field name">
+                                            <input type="text" name="phone" placeholder=" Số điện thoại">
                                         </div>
                                     </div>
                                     <div class="control-group">
                                         <label class="control-label">Địa chỉ <sup>*</sup></label>
                                         <div class="controls">
-                                            <textarea></textarea>
+                                            <textarea name="address" ><?php if(isset($_SESSION['username'])) echo $_SESSION['username']['address'] ?></textarea>
                                         </div>
                                     </div>
                                     <div class="control-group">
                                         <label class="control-label">Ghi chú <sup>*</sup></label>
                                         <div class="controls">
-                                            <textarea></textarea>
+                                            <textarea name="note"></textarea>
                                         </div>
                                     </div>
                                     <div class="control-group">
                                         <div class="controls">
-                                            <input type="submit" name="submitAccount" value="Register" class="shopBtn exclusive">
+                                            <input type="submit" name="submitAccount" value="Đặt hàng" class="shopBtn exclusive">
                                         </div>
                                     </div>
-                                </form:form>
+                                </form>
                             </div>
                         </div>
                         <div class="span1">&nbsp;</div>
@@ -77,7 +78,7 @@
                 <?php } else { ?>
                     <div class="alert alert-danger">
                         <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                        <strong>Vui lòng đăng nhập để mua hàng</strong> <a href="register.php" title="">Login</a>
+                        <strong>Vui lòng đăng nhập để mua hàng</strong> <a href="register.php?action1=checkOut" title="">Login</a>
                     </div>
                 <?php } ?>
             </div>
